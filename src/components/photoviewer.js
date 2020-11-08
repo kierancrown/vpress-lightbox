@@ -7,7 +7,7 @@ import { CloseIcon, LoadingIcon, InfoIcon } from "./icons";
 
 const PhotoViewer = ({ openPhoto, closePhotoViewer }) => {
   const [loading, setLoading] = useState(true);
-  const [showMetadata, setShowMetadata] = useState(true);
+  const [showMetadata, setShowMetadata] = useState(false);
 
   const escKeyPressed = (e) => {
     if (e.keyCode === 27) closePhotoViewer();
