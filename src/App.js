@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { connect } from "react-redux";
+import updatePhotos from "./store/actions/updatePhotos";
 
-export default App;
+const App = ({ setPhotos, photos }) => {
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      try {
+        let res = await fetch(
+          "https://run.mocky.io/v3/525464b2-740b-40f8-9fb4-1cf0a6be1a6d"
+        );
+        res = await res.json();
+        setPhotos(res);
+      } catch (error) {
+        throw error;
+      }
+    };
+    fetchPhotos();
+  }, [setPhotos]);
+  return <div className="App">REDUX LIGHTBOX APP</div>;
+};
+
+const MapStateToProps = (state) => {
+  return {
+    photos: state.photos,
+  };
+};
+
+const MapDispatchToProps = (dispatch) => {
+  return {
+    setPhotos: (photos) => {
+      console.log(photos);
+      dispatch(updatePhotos(photos));
+    },
+  };
+};
+
+export default connect(MapStateToProps, MapDispatchToProps)(App);
