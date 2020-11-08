@@ -1,10 +1,13 @@
 import { createStore, combineReducers } from "redux";
 import photoslistReducer from "./reducers/photolistReducer";
 
-const reducer = combineReducers({ photos: photoslistReducer });
+const reducer = combineReducers({ lightbox: photoslistReducer });
 
 const initialState = {
-  photos: [],
+  lightbox: {
+    photos: [],
+    openPhoto: null,
+  },
 };
 
 const store = createStore(

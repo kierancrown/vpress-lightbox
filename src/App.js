@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import { connect } from "react-redux";
-import updatePhotos from "./store/actions/updatePhotos";
+import Lightbox from "./components/lightbox";
 
-const App = ({ setPhotos, photos }) => {
+import { connect } from "react-redux";
+import { updatePhotos } from "./store/actions/updatePhotos";
+
+const App = ({ setPhotos }) => {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
@@ -19,22 +21,20 @@ const App = ({ setPhotos, photos }) => {
     };
     fetchPhotos();
   }, [setPhotos]);
-  return <div className="App">REDUX LIGHTBOX APP</div>;
-};
 
-const MapStateToProps = (state) => {
-  return {
-    photos: state.photos,
-  };
+  return (
+    <div className="App">
+      <Lightbox />
+    </div>
+  );
 };
 
 const MapDispatchToProps = (dispatch) => {
   return {
     setPhotos: (photos) => {
-      console.log(photos);
       dispatch(updatePhotos(photos));
     },
   };
 };
 
-export default connect(MapStateToProps, MapDispatchToProps)(App);
+export default connect(null, MapDispatchToProps)(App);
