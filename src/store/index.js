@@ -7,6 +7,7 @@ const initialState = {
   lightbox: {
     photos: [],
     openPhoto: null,
+    filter: "",
   },
 };
 

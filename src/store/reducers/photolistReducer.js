@@ -2,6 +2,7 @@ import {
   UPDATE_PHOTOS,
   OPEN_PHOTO,
   CLOSE_PHOTO,
+  SET_FILTER,
 } from "../actions/updatePhotos";
 
 const photolistReducer = (state = {}, { type, payload }) => {
@@ -12,6 +13,8 @@ const photolistReducer = (state = {}, { type, payload }) => {
       return { ...state, openPhoto: payload };
     case CLOSE_PHOTO:
       return { ...state, openPhoto: null };
+    case SET_FILTER:
+      return { ...state, filter: payload };
     default:
       return state;
   }
