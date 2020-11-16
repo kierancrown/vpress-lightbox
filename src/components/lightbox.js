@@ -3,7 +3,7 @@ import Thumbnail from "./Thumbnail";
 import Fuse from "fuse.js";
 import { connect } from "react-redux";
 
-import "../styles/lightbox.css";
+import "../styles/Lightbox.scss";
 import PhotoViewer from "./PhotoViewer";
 
 const Lightbox = ({ photos, filter }) => {

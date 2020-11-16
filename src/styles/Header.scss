@@ -1,2 +1,37 @@
 #header {
+  display: flex;
+  padding: calc(20px + 00.67em) 0.67em;
+
+  h1 {
+    margin: 0;
+  }
+
+  #filter-container {
+    margin-left: auto;
+    border: none;
+    border-radius: 4px;
+    min-width: 22%;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: white;
+    cursor: text;
+    input {
+      outline: none;
+      border: none;
+      font-size: 1em;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  #header {
+    flex-direction: column;
+
+    #filter-container {
+      width: calc(100% - 24px);
+      height: 43px;
+      margin-top: 20px;
+    }
+  }
 }

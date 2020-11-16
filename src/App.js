@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import "./styles/App.scss";
 
 import Lightbox from "./components/Lightbox";
 import Header from "./components/Header";
@@ -24,7 +24,7 @@ const App = ({ setPhotos }) => {
   }, [setPhotos]);
 
   return (
-    <div className="App">
+    <div className="App theme-dark">
       <Header />
       <Lightbox />
     </div>
