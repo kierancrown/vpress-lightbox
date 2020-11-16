@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Thumbnail from "./thumbnail";
+import Thumbnail from "./Thumbnail";
 import Fuse from "fuse.js";
 import { connect } from "react-redux";
 
 import "../styles/lightbox.css";
-import PhotoViewer from "./photoviewer";
+import PhotoViewer from "./PhotoViewer";
 
 const Lightbox = ({ photos, filter }) => {
   const [photosArr, setPhotosArr] = useState([]);

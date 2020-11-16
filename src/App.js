@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import Lightbox from "./components/lightbox";
-import Sidebar from "./components/sidebar";
+import Lightbox from "./components/Lightbox";
+import Header from "./components/Header";
 
 import { connect } from "react-redux";
 import { updatePhotos } from "./store/actions/updatePhotos";
@@ -25,7 +25,7 @@ const App = ({ setPhotos }) => {
 
   return (
     <div className="App">
-      <Sidebar />
+      <Header />
       <Lightbox />
     </div>
   );

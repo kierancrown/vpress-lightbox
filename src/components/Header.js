@@ -2,9 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { setFilter } from "../store/actions/updatePhotos";
 
-const Sidebar = ({ setFilter }) => {
+import "../styles/Header.scss";
+
+const Header = ({ setFilter }) => {
   return (
-    <div id="sidebar">
+    <div id="header">
       <h1>Photo Gallery App</h1>
       <input
         type="text"
@@ -25,4 +27,4 @@ const MapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, MapDispatchToProps)(Sidebar);
+export default connect(null, MapDispatchToProps)(Header);
